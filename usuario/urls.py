@@ -1,5 +1,6 @@
 from django.conf.urls import url, include
-from .views import (login,
+from .views import (
+	login,
 	cadastro,
 	informacoes,
 	cadastro_novo,

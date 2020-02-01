@@ -1,4 +1,17 @@
-<h2>Informações</h2>
+{% extends 'base.html' %}
+
+{% block main %}
+
+<div class="row">
+	<div class="col-12"></div>
+		<h1>Informações</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-6"></div>
+	<div class="col-sm-6"></div>
+</div>
 
 <ul>
 {% for pessoa in pessoas %}
@@ -7,3 +20,5 @@
 	</li>
 {% endfor %}
 </ul>
+
+{% endblock %}

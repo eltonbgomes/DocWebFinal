@@ -1,6 +1,12 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
 <h2>LOGIN</h2>
 
 <form action="{% url 'usuario_cadastro' %}" method="GET">
 	{% csrf_token %} <!--Variavel para proteger o formulario contra ataques de csrf_token-->
-	<button type="submit">Novo Cadastro</button>
+	<button type="submit" class="btn btn-primary">Novo Cadastro</button>
 </form>
+
+{% endblock %}
