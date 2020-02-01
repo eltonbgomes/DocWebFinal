@@ -1,0 +1,16 @@
+<h2>CADASTRO</h2>
+
+
+<ul>
+{% for pessoa in pessoas %}
+	<li> {{ pessoa.nome }} </li>
+{% endfor %}
+</ul>
+
+<form action="{% url 'usuario_cadastro_novo' %}" method="POST">
+	{% csrf_token %} <!--Variavel para proteger o formulario contra ataques de csrf_token-->
+
+	{{form.as_p}}
+
+	<button type="submit">Cadastrar</button>
+</form>

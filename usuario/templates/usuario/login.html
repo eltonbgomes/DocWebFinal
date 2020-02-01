@@ -1,0 +1,6 @@
+<h2>LOGIN</h2>
+
+<form action="{% url 'usuario_cadastro' %}" method="GET">
+	{% csrf_token %} <!--Variavel para proteger o formulario contra ataques de csrf_token-->
+	<button type="submit">Novo Cadastro</button>
+</form>
