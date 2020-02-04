@@ -1,0 +1,11 @@
+{% extends 'website/base.html' %}
+
+{% block main %}
+	<h1>SEJA BEM VINDO AO DOCWEB</h1>
+
+<form action="{% url 'usuario_login' %}" method="GET">
+	{% csrf_token %} <!--Variavel para proteger o formulario contra ataques de csrf_token-->
+	<button type="submit" class="btn btn-primary">Sistema</button>
+</form>
+
+{% endblock %}

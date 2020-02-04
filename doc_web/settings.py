@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrapform',
     'usuario',
+    'website',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,7 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_files')
+
+LOGIN_URL = 'usuario_login'
+LOGIN_REDIRECT_URL = 'usuario_login'
+LOGOUT_REDIRECT_URL = 'usuario_login'

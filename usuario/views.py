@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from .models import Pessoa
 from .forms import PessoaForm
 
@@ -14,6 +15,7 @@ def cadastro_novo(request):
     return redirect('usuario_informacoes')
 
 
+@login_required()
 def cadastro_update(request, id):
     data  = {}
     pessoa = Pessoa.objects.get(id=id)
@@ -28,6 +30,8 @@ def cadastro_update(request, id):
     else:
         return render(request, 'usuario/cadastro_update.html', data)
 
+
+@login_required()
 def cadastro_delete(request, id):
     pessoa = Pessoa.objects.get(id=id)
     if request.method == 'POST': #somente irá deletar se vir como POST
@@ -52,6 +56,7 @@ def cadastro(request):
 
 
 #funcao para abrir a pagina de informações
+@login_required()
 def informacoes(request):
     pessoas = Pessoa.objects.all()
     return render(request, 'usuario/informacoes.html', {'pessoas': pessoas})
