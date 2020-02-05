@@ -8,7 +8,6 @@ from .views import (
 	cadastro_delete
 )
 
-
 #urls das paginas do app usuario
 urlpatterns = [
 	url(r'^$', login, name='usuario_login'),

@@ -10,8 +10,6 @@
 				role="button" aria-haspopup="true" aria-expanded="false">Serviços</a>
 			<div class="dropdown-menu">
 				<a class="dropdown-item" href="{% url 'usuario_cadastro' %}">Novo Cadastro</a>
-				<a class="dropdown-item" href="#">Another action</a>
-				<a class="dropdown-item" href="#">Something else here</a>
 				<div class="dropdown-divider"></div>
 				<a class="dropdown-item active" href="{% url 'usuario_informacoes' %}">Informações</a>
 			</div>
@@ -33,17 +31,17 @@
 
 {% block main %}
 
-<h2>Tem certeza que quer Apagar: {{ pessoa.nome }}</h2>
+	<h2>Tem certeza que quer Apagar: {{ pessoa.nome }}</h2>
 
 
-<form action="{% url 'usuario_cadastro_delete' pessoa.id %}" method="POST">
-	{% csrf_token %}
-	<button type="submit" class="btn btn-danger">Apagar</button>
-</form>
+	<form action="{% url 'usuario_cadastro_delete' pessoa.id %}" method="POST">
+		{% csrf_token %}
+		<button type="submit" class="btn btn-danger">Apagar</button>
+	</form>
 
-<form action="{% url 'usuario_cadastro_update' pessoa.id %}" method="GET">
-	{% csrf_token %}
-	<button type="submit" class="btn btn-primary">Cancelar</button>
-</form>
+	<form action="{% url 'usuario_cadastro_update' pessoa.id %}" method="GET">
+		{% csrf_token %}
+		<button type="submit" class="btn btn-primary">Cancelar</button>
+	</form>
 
 {% endblock %}

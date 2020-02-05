@@ -1,0 +1,89 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block main %}
+
+<div class="row">
+	<p>{{ mensagem }}</p>
+</div>
+
+<div class="row row-space">
+	<div class="col-6">
+		<form method="POST">
+			{% csrf_token %}
+			<div class="form-row">
+				<div class="form-group col-md-12">
+					<label for="inputEmail4">Email</label>
+					<input type="email" class="form-control" id="inputEmail4" 
+						name="email">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-6">
+					<label for="inputNome">Nome</label>
+					<input type="text" class="form-control" id="inputNome"
+						placeholder="Nome" name="nome">
+				</div>
+				<div class="form-group col-6">
+					<label for="inputSobreNome">Sobrenome</label>
+					<input type="text" class="form-control" id="inputSobreNome"
+						placeholder="Sobrenome" name="sobrenome">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputEndereco">Endereço</label>
+				<input type="text" class="form-control" id="inputEndereco"
+					placeholder="Rua, Avenida" name="endereco">
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="inputCidade">Cidade</label>
+					<input type="text" class="form-control" id="inputCidade"
+						name="cidade">
+				</div>
+				<div class="form-group col-md-4">
+					<label for="inputEstado">Estado</label>
+					<input type="text" class="form-control" id="inputEstado"
+						name="estado">
+				</div>
+			</div>
+			<div class="form">
+				<textarea name="mensagem" id cols="90" rows="4" class="form-control">
+				</textarea>
+			</div>
+			<div class="form-group">
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" id="gridCheck"
+						name="receber_noticias">
+					<label class="form-check-label" for="gridCheck">Desejo receber notícias
+					</label>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Enviar</button>
+		</form>
+	</div>
+	<div class="col-6">
+		<p>
+			Fusce non felis sit amet ligula elementum consectetur. Nulla lobortis 
+			lorem diam, vel luctus leo aliquam quis. Nam ornare turpis a nisl euismod, 
+			et porta nisl condimentum. Quisque scelerisque sem quis porta viverra. In 
+			dapibus lorem vitae pharetra condimentum. Sed maximus quis leo ut eleifend. 
+			Etiam eu purus porta, eleifend tortor ut, pellentesque magna. Nunc pulvinar 
+			eros in massa semper vestibulum. Maecenas fringilla, nisl ornare euismod 
+			convallis, felis tortor lacinia risus, eget sodales felis tellus at nunc. 
+			Duis id sapien tempor, placerat lorem ut, gravida ex. Vestibulum et magna 
+			sed massa consectetur condimentum at id quam. Integer tristique volutpat 
+			est a elementum.
+		</p>
+
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2739.
+			5902532595746!2d-46.652764479947884!3d-23.571523779738058!2m3!1f0!2f0!3f0
+			!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c0f072cf1f%3A0xc50d083132a2d16
+			2!2sAlameda%20Sarutai%C3%A1%2C%2073%20-%20Jardim%20Paulista%2C%20S%C3%A3
+			o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1580874940835!5m2!1spt-BR!2sbr"
+			width="620" height="500" frameborder="0" style="border:0;" allowfullscreen="">
+		</iframe>	
+	</div>
+</div>
+
+{% endblock %}

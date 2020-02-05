@@ -1,11 +1,35 @@
 {% extends 'website/base.html' %}
+{% load static %}
 
 {% block main %}
-	<h1>SEJA BEM VINDO AO DOCWEB</h1>
-
-<form action="{% url 'usuario_login' %}" method="GET">
-	{% csrf_token %} <!--Variavel para proteger o formulario contra ataques de csrf_token-->
-	<button type="submit" class="btn btn-primary">Sistema</button>
-</form>
+	<div class="row">
+		<div class="col-6">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquamfringilla justo, eu ultrices lectus ultrices vitae. Morbi sollicitudin congue erat quis euismod. Maecenas a velit vel augue consectetur lobortis. Nam ultricies, lorem eget condimentum egestas, risus mauris fringilla diam, a congue lectus est non magna. Aliquam volutpat arcu mauris, sit amet porttitor augue ultricies id. Nulla lobortis condimentum efficitur. Ut fringilla nulla sit amet dolor porta gravida. Aenean vulputate consectetur fringilla. Nulla faucibus auctor ipsum ac pellentesque.
+		</div>
+		<div class="col-6">
+			Curabitur interdum in sapien et blandit. Maecenas ultricies, metus non condimentum placerat, nunc augue euismod nibh, eget ultrices ex ligula sed quam. Nullam ultricies velit neque, et dapibus urna dictum id. Cras quis pulvinar diam. Duis accumsan vulputate lacus nec consectetur. Sed viverra risus vitae neque efficitur fringilla. Nullam vulputate purus neque, eu vulputate purus tristique at. Aenean sit amet ligula id arcu iaculis semper. Morbi interdum placerat posuere. Pellentesque luctus facilisis dui in fringilla. Nunc libero diam, blandit ac urna quis, pharetra sollicitudin felis. Curabitur libero velit, blandit nec ullamcorper in, tristique a arcu. Duis finibus massa sit amet metus iaculis, quis luctus tellus vehicula.
+		</div>
+	</div>
+<br>
+	<div class="row">
+		<div class="col-5">
+			Donec iaculis augue orci, sit amet lacinia nunc ullamcorper at. Nulla in ipsum lectus. Aliquam velit tellus, commodo eu ornare quis, rhoncus in quam. Sed rhoncus interdum erat at ullamcorper. Mauris semper venenatis nisl, non tincidunt elit tempor non. Fusce lobortis in lectus in euismod. Suspendisse vulputate nisi nibh, ac sollicitudin elit finibus ac. Sed ultrices mattis purus, ut scelerisque ante fermentum vel. Sed id vulputate massa. Pellentesque lacinia vestibulum interdum. Aenean efficitur vel nunc ut scelerisque. Maecenas suscipit nulla dolor, eget placerat turpis bibendum sit amet.
+		</div>
+		<div class="col-2">
+			<img class="img-fluid" src="{% static 'img/logo1.png' %}" alt="Imagem">
+		</div>
+		<div class="col-5">
+			Duis pharetra nunc non orci convallis, in iaculis augue tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla pretium velit vitae felis interdum, vel ornare lectus ornare. Aenean risus ligula, tristique eu porttitor sit amet, bibendum et leo. Quisque posuere bibendum odio ut accumsan. Quisque malesuada vel libero vel consectetur. Aliquam mollis laoreet sem eu aliquet.
+		</div>
+	</div>
+<br>
+	<div class="row">
+		<div class="col-6">
+			Praesent id nunc ante. Cras nunc dolor, mattis vel odio et, venenatis pharetra purus. Proin nulla orci, cursus vel consectetur quis, placerat nec lectus. Praesent porta odio at nisl blandit aliquet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec eget nulla ac neque convallis viverra in luctus odio. Morbi blandit justo nec cursus facilisis. Quisque auctor nibh feugiat, rutrum nibh sodales, imperdiet erat. Donec et tempor velit. Duis vestibulum sed tortor ut egestas.
+		</div>
+		<div class="col-6">
+			Nullam nec orci non neque ullamcorper faucibus. Etiam posuere mauris non ligula venenatis, at commodo sem consectetur. Morbi quis velit justo. Nullam sed lacus placerat, tristique nibh maximus, euismod neque. Sed vestibulum sit amet diam id condimentum. Maecenas eget euismod tellus. Morbi vitae finibus nisi. Praesent sit amet laoreet libero, vitae imperdiet nunc.
+		</div>
+	</div>
 
 {% endblock %}

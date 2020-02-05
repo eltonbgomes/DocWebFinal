@@ -11,8 +11,6 @@
 				role="button" aria-haspopup="true" aria-expanded="false">Serviços</a>
 			<div class="dropdown-menu">
 				<a class="dropdown-item active" href="{% url 'usuario_cadastro' %}">Novo Cadastro</a>
-				<a class="dropdown-item" href="#">Another action</a>
-				<a class="dropdown-item" href="#">Something else here</a>
 				<div class="dropdown-divider"></div>
 				<a class="dropdown-item" href="{% url 'usuario_informacoes' %}">Informações</a>
 			</div>
@@ -34,26 +32,25 @@
 
 {% block main %}
 
-<h2>CADASTRO</h2>
+	<h2>CADASTRO</h2>
 
+	<ul>
+		{% for pessoa in pessoas %}
+			<li> {{ pessoa.nome }} </li>
+		{% endfor %}
+	</ul>
 
-<ul>
-{% for pessoa in pessoas %}
-	<li> {{ pessoa.nome }} </li>
-{% endfor %}
-</ul>
+	<form action="{% url 'usuario_cadastro_novo' %}" method="POST">
+		{% csrf_token %} <!--Variavel para proteger o formulario contra ataques de csrf_token-->
 
-<form action="{% url 'usuario_cadastro_novo' %}" method="POST">
-	{% csrf_token %} <!--Variavel para proteger o formulario contra ataques de csrf_token-->
+		{{ form|bootstrap }}
 
-	{{ form|bootstrap }}
+		<button type="submit" class="btn btn-primary">Cadastrar</button>
+	</form>
 
-	<button type="submit" class="btn btn-primary">Cadastrar</button>
-</form>
-
-<form action="{% url 'usuario_login' %}" method="GET">
-	{% csrf_token %}
-	<button type="submit" class="btn btn-secondary">Cancelar</button>
-</form>
+	<form action="{% url 'usuario_login' %}" method="GET">
+		{% csrf_token %}
+		<button type="submit" class="btn btn-secondary">Cancelar</button>
+	</form>
 
 {% endblock %}

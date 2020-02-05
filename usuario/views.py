@@ -8,6 +8,7 @@ from .forms import PessoaForm
 
 #funcao para salvar um novo cadastro e redirecionar para
 #a pagina de informacoes
+@login_required() #autentificador
 def cadastro_novo(request):
     form = PessoaForm(request.POST or None)
     if form.is_valid():
@@ -15,7 +16,9 @@ def cadastro_novo(request):
     return redirect('usuario_informacoes')
 
 
-@login_required()
+#funcao para atualizar um cadastro e redirecionar para
+#a pagina de informacoes
+@login_required() #autentificador
 def cadastro_update(request, id):
     data  = {}
     pessoa = Pessoa.objects.get(id=id)
@@ -31,7 +34,9 @@ def cadastro_update(request, id):
         return render(request, 'usuario/cadastro_update.html', data)
 
 
-@login_required()
+#funcao para apagar um cadastro e redirecionar para
+#a pagina de informacoes
+@login_required() #autentificador
 def cadastro_delete(request, id):
     pessoa = Pessoa.objects.get(id=id)
     if request.method == 'POST': #somente irá deletar se vir como POST
@@ -48,6 +53,7 @@ def login(request):
 
 
 #funcao para abrir a pagina de cadastro
+@login_required() #autentificador
 def cadastro(request):
     pessoas = Pessoa.objects.all()
     form = PessoaForm()
@@ -56,7 +62,7 @@ def cadastro(request):
 
 
 #funcao para abrir a pagina de informações
-@login_required()
+@login_required() #autentificador
 def informacoes(request):
     pessoas = Pessoa.objects.all()
     return render(request, 'usuario/informacoes.html', {'pessoas': pessoas})

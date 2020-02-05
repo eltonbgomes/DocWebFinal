@@ -10,8 +10,6 @@
 				role="button" aria-haspopup="true" aria-expanded="false">Serviços</a>
 			<div class="dropdown-menu">
 				<a class="dropdown-item" href="{% url 'usuario_cadastro' %}">Novo Cadastro</a>
-				<a class="dropdown-item" href="#">Another action</a>
-				<a class="dropdown-item" href="#">Something else here</a>
 				<div class="dropdown-divider"></div>
 				<a class="dropdown-item active" href="{% url 'usuario_informacoes' %}">Informações</a>
 			</div>
@@ -33,23 +31,23 @@
 
 {% block main %}
 
-<div class="row">
-	<div class="col-12"></div>
-		<h1>Informações</h1>
+	<div class="row">
+		<div class="col-12"></div>
+			<h1>Informações</h1>
+		</div>
 	</div>
-</div>
 
-<div class="row">
-	<div class="col-sm-6"></div>
-	<div class="col-sm-6"></div>
-</div>
+	<div class="row">
+		<div class="col-sm-6"></div>
+		<div class="col-sm-6"></div>
+	</div>
 
-<ul>
-{% for pessoa in pessoas %}
-	<li> 
-		<a href="{% url 'usuario_cadastro_update' pessoa.id %}">{{ pessoa.nome }} <a/>
-	</li>
-{% endfor %}
-</ul>
+	<ul>
+	{% for pessoa in pessoas %}
+		<li> 
+			<a href="{% url 'usuario_cadastro_update' pessoa.id %}">{{ pessoa.nome }} <a/>
+		</li>
+	{% endfor %}
+	</ul>
 
 {% endblock %}
